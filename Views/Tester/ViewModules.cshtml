@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ReleaseManagementMVC.Models.Module>
+
+@{
+    ViewBag.Title = "ViewModules";
+}
+
+<h2>ViewModules</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.developer.DeveloperName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.project.ProjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tester.TesterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.developer.DeveloperName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.project.ProjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tester.TesterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModuleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModuleStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ModuleID }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

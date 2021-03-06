@@ -18,6 +18,13 @@ namespace ReleaseManagementMVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "TesterFolder",
+                url: "Tester/{controller}/{action}/{id}",
+                defaults: new { controller = "Tester", action = "Index", id = UrlParameter.Optional }
+
+                );
         }
     }
 }

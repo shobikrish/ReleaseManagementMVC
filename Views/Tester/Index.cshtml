@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <td>
+            @using (Html.BeginForm("RaiseBug", "Tester"))
+            {
+                <input name="submitButton" type="submit" value="Raise a Bug" class="btn btn-primary" />
+            }
+        </td>
+        <td>
+            @using (Html.BeginForm("BugStatus", "Tester"))
+            {
+                <input name="submitButton" type="submit" value="Bug Status" class="btn btn-primary" />
+            }
+        </td>
+    </tr>
+</table>
