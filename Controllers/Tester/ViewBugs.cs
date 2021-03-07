@@ -9,9 +9,9 @@ namespace ReleaseManagementMVC.Controllers
     public partial class TesterController : Controller
     {
         
-        public ActionResult ViewBugs()
+        public ActionResult ViewBugs(string id)
         {
-            var data = testContext.Bugs;
+            var data = testContext.Bugs.Where(b=>b.TesterID.Equals(id));
             return View(data);
         }
     }

@@ -11,9 +11,7 @@ namespace ReleaseManagementMVC.Controllers
     public partial class TesterController : Controller
     {
 
-        ReleaseManagementContext testContext = new ReleaseManagementContext();
-
-        public ActionResult RaiseBug()
+        public ActionResult RaiseBug(string id)
         {
             try
             {
@@ -23,14 +21,16 @@ namespace ReleaseManagementMVC.Controllers
                 {
                     ViewBag.ErrorMessage = "No Modules Found !!!";
                 }
-               
-                var testerIdsFromDB = from x in testContext.Testers select x.TesterID;
-                ViewBag.testerIds = new SelectList(testerIdsFromDB.ToList(), "TesterID");
 
-                if (testerIdsFromDB == null)
-                {
-                    ViewBag.ErrorMessage = "No Modules Found !!!";
-                }
+                ViewData["TesterID"] = id;
+               
+                //var testerIdsFromDB = from x in testContext.Testers select x.TesterID;
+                //ViewBag.testerIds = new SelectList(testerIdsFromDB.ToList(), "TesterID");
+
+                //if (testerIdsFromDB == null)
+                //{
+                //    ViewBag.ErrorMessage = "No Modules Found !!!";
+                //}
                
             }
             catch(Exception e)
@@ -56,14 +56,6 @@ namespace ReleaseManagementMVC.Controllers
             }
 
             return View("SuccessMessage");
-        }
-
-        public ActionResult Test()
-        {
-            var moduleIdsFromDB = from x in testContext.Modules select x.ModuleID;
-            ViewBag.moduleIds = moduleIdsFromDB.ToList();
-
-            return View();
         }
 
 

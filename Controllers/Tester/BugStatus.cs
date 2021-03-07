@@ -11,9 +11,9 @@ namespace ReleaseManagementMVC.Controllers
     {
 
         // GET: BugStatus
-        public ActionResult BugStatus()
+        public ActionResult BugStatus(string id)
         {
-            var data = testContext.Bugs;
+            var data = testContext.Bugs.Where(b =>b.TesterID==id);
             return View(data);
         }
 

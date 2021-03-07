@@ -6,9 +6,6 @@
 
 <h2>ViewBugs</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -34,11 +31,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.BugStatus)
         </td>
-        <td>
-            
-            @Html.ActionLink("Details", "Details", new { id=item.BugID }) 
-           
-        </td>
+       
     </tr>
 }
 

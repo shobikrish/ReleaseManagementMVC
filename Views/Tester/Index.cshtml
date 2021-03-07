@@ -5,18 +5,34 @@
 
 <h2>Index</h2>
 
+<p>Welcome @ViewData["EmpName"]</p>
+
 <table>
     <tr>
         <td>
-            @using (Html.BeginForm("RaiseBug", "Tester"))
+            @using (Html.BeginForm("RaiseBug", "Tester", new { id = ViewData["UserID"] } , FormMethod.Get))
             {
                 <input name="submitButton" type="submit" value="Raise a Bug" class="btn btn-primary" />
             }
         </td>
         <td>
-            @using (Html.BeginForm("BugStatus", "Tester"))
+            @using (Html.BeginForm("BugStatus", "Tester" ,  new { id = ViewData["UserID"] }))
             {
                 <input name="submitButton" type="submit" value="Bug Status" class="btn btn-primary" />
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @using (Html.BeginForm("ViewModules", "Tester", new { id = ViewData["UserID"] }))
+            {
+                <input name="submitButton" type="submit" value="View Modules" class="btn btn-primary" /> 
+            }
+        </td>
+        <td>
+            @using (Html.BeginForm("ViewBugs", "Tester", new { id = ViewData["UserID"] }))
+            {
+                <input name="submitButton" type="submit" value="View Bugs" class="btn btn-primary" />
             }
         </td>
     </tr>

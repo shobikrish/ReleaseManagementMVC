@@ -127,7 +127,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Tester\BugStatus.cs" />
+    <Compile Include="Controllers\Tester\RaiseBug.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\Tester\TesterController.cs" />
+    <Compile Include="Controllers\Tester\ViewBugs.cs" />
+    <Compile Include="Controllers\Tester\ViewModules.cs" />
+    <Compile Include="Controllers\TestLoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,9 +185,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Register\reg.cshtml" />
+    <Content Include="Views\Tester\Index.cshtml" />
+    <Content Include="Views\Tester\RaiseBug.cshtml" />
+    <Content Include="Views\Tester\SuccessMessage.cshtml" />
+    <Content Include="Views\Tester\FailedMessage.cshtml" />
+    <Content Include="Views\Tester\BugStatus.cshtml" />
+    <Content Include="Views\Tester\Edit.cshtml" />
+    <Content Include="Views\Tester\ViewModules.cshtml" />
+    <Content Include="Views\Tester\ViewBugs.cshtml" />
+    <Content Include="Views\TestLogin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BugStatus\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
