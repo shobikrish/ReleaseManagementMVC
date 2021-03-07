@@ -21,7 +21,13 @@ namespace ReleaseManagementMVC.Controllers
         {
             ViewBag.BugID = bugId;
             var data = testContext.Bugs.Where(x => x.BugID.Equals(bugId)).SingleOrDefault();
+
+            List<SelectListItem> bugStatusStates = new List<SelectListItem>() { };
+            bugStatusStates.Add(new SelectListItem() { Text = "Reopen", Value = "Reopen" });
+            bugStatusStates.Add(new SelectListItem() { Text = "Closed", Value = "Closed" });
             
+            ViewBag.BugStatuses = bugStatusStates;
+
             return View(data);
         }
 
@@ -37,12 +43,35 @@ namespace ReleaseManagementMVC.Controllers
                 
                 testContext.SaveChanges();
 
-                return RedirectToAction("SuccessMessage");
+                return View("SuccessMessage");
+            }
+            else
+                return View("FailedMessage");
+
+        }
+
+
+        public ViewResult Delete(string id)
+        {
+            var data = testContext.Bugs.FirstOrDefault(x => x.BugID.Equals(id));
+            return View(data);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(string id)
+        {
+
+            var data = testContext.Bugs.FirstOrDefault(x => x.BugID.Equals(id));
+            if (data != null)
+            {
+                testContext.Bugs.Remove(data);
+                testContext.SaveChanges();
+                return RedirectToAction("Index");
             }
             else
                 return View();
-
         }
+
 
 
     }

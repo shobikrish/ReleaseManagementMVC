@@ -194,10 +194,10 @@
     <Content Include="Views\Tester\ViewModules.cshtml" />
     <Content Include="Views\Tester\ViewBugs.cshtml" />
     <Content Include="Views\TestLogin\Index.cshtml" />
+    <Content Include="Views\Tester\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BugStatus\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

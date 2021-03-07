@@ -22,7 +22,7 @@ namespace ReleaseManagementMVC.Controllers
                     ViewBag.ErrorMessage = "No Modules Found !!!";
                 }
 
-                ViewData["TesterID"] = id;
+                ViewBag.TesterID = id;
                
                 //var testerIdsFromDB = from x in testContext.Testers select x.TesterID;
                 //ViewBag.testerIds = new SelectList(testerIdsFromDB.ToList(), "TesterID");
@@ -42,10 +42,12 @@ namespace ReleaseManagementMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult RaiseBug(Bug bug)
+        public ActionResult RaiseBug(String id  , Bug bug)
         {
             try
             {
+                bug.TesterID = id;
+                bug.BugStatus = "Open";
                 testContext.Bugs.Add(bug);
                 testContext.SaveChanges();
 
