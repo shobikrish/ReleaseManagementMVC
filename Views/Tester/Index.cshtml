@@ -3,36 +3,38 @@
     ViewBag.Title = "Index";
 }
 
+<link  rel="stylesheet" href="~/Content/TesterPage.css"/>
+
 <h2>Index</h2>
 
 <p>Welcome @ViewData["EmpName"]</p>
 
-<table>
+<table class="center" >
     <tr>
-        <td>
+        <td >
             @using (Html.BeginForm("RaiseBug", "Tester", new { id = ViewData["UserID"] } , FormMethod.Get))
             {
-                <input name="submitButton" type="submit" value="Raise a Bug" class="btn btn-primary" />
+                <input name="submitButton" type="submit" value="Raise a Bug" class="button" />
             }
         </td>
-        <td>
+        <td >
             @using (Html.BeginForm("BugStatus", "Tester" ,  new { id = ViewData["UserID"] }))
             {
-                <input name="submitButton" type="submit" value="Bug Status" class="btn btn-primary" />
+                <input name="submitButton" type="submit" value="Bug Status" class="button" />
             }
         </td>
     </tr>
     <tr>
-        <td>
+        <td >
             @using (Html.BeginForm("ViewModules", "Tester", new { id = ViewData["UserID"] }))
             {
-                <input name="submitButton" type="submit" value="View Modules" class="btn btn-primary" /> 
+                <input name="submitButton" type="submit" value="View Modules" class="button" /> 
             }
         </td>
-        <td>
+        <td >
             @using (Html.BeginForm("ViewBugs", "Tester", new { id = ViewData["UserID"] }))
             {
-                <input name="submitButton" type="submit" value="View Bugs" class="btn btn-primary" />
+                <input name="submitButton" type="submit" value="View Bugs" class="button" />
             }
         </td>
     </tr>

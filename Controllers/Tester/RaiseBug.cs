@@ -50,13 +50,14 @@ namespace ReleaseManagementMVC.Controllers
                 bug.BugStatus = "Open";
                 testContext.Bugs.Add(bug);
                 testContext.SaveChanges();
-
             }
             catch
             {
+                ViewData["msg"] = "RaiseBugFailedMessage";
                 return View("FailedMessage");
             }
 
+            ViewData["msg"] = "RaiseBugSuccessMessage";
             return View("SuccessMessage");
         }
 

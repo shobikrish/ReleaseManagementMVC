@@ -3,7 +3,16 @@
     ViewBag.Title = "Tester - Raise Bug ";
 }
 
-<div class="alert alert-success" role="alert">
-    <div class="alert-heading">Well Done ... You raised the bug successfully</div>
-</div>
+@if (ViewData["msg"].Equals("RaiseBugSuccessMessage"))
+{
+    <div class="alert alert-success" role="alert">
+        <div class="alert-heading">Well Done ... You raised the bug successfully</div>
+    </div>
+}
+else if (ViewData["msg"].Equals("BugStatusSuccessMessage"))
+{
+    <div class="alert alert-success" role="alert">
+        <div class="alert-heading">You updated the bug successfully</div>
+    </div>
+}
 

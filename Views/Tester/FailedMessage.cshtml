@@ -3,7 +3,16 @@
     ViewBag.Title = "FailedMessage";
 }
 
-<div class="alert alert-danger" role="alert">
-    <div class="alert-heading">Sorry ... Bug raising failed !!!</div>
-</div>
+@if (ViewData["msg"].Equals("RaiseBugFailedMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-heading">Sorry ... Bug raising failed !!!</div>
+    </div>
+}
+else if (ViewData["msg"].Equals("BugStatusFailedMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="alert-heading">Sorry ... Updating Bug Status failed !!!</div>
+    </div>
+}
 

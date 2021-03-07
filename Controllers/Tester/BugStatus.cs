@@ -40,12 +40,13 @@ namespace ReleaseManagementMVC.Controllers
             {
 
                 data.BugStatus = model.BugStatus;
-                
                 testContext.SaveChanges();
 
+                ViewData["msg"] = "BugStatusSuccessMessage";
                 return View("SuccessMessage");
             }
             else
+                ViewData["msg"] = "BugStatusFailedMessage";
                 return View("FailedMessage");
 
         }
