@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ReleaseManagementMVC.Models.Bug>
+
+@{
+    ViewBag.Title = "BugStatus";
+}
+
+<h2>BugStatus</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BugID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TesterID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BugStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.BugID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModuleID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TesterID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BugStatus)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.BugID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BugID })
+    </td>
+</tr>
+}
+
+</table>

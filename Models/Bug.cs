@@ -12,6 +12,8 @@ namespace ReleaseManagementMVC.Models
         [Key]
         public string BugID { get; set; }
 
+        public string BugDescription { get; set; }
+
         public string ModuleID{ get; set; }
         [ForeignKey("ModuleID")]
         public Module module { get; set; }
