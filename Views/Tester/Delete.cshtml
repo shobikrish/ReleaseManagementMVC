@@ -12,19 +12,27 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.module.ModuleName)
+            @Html.DisplayNameFor(model => model.BugID)
+        </dt>
+
+        <dt>
+            @Html.DisplayFor(model => model.BugID)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.module.ModuleName)
+            @Html.DisplayFor(model => model.ModuleID)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tester.TesterName)
+            @Html.DisplayNameFor(model => model.TesterID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tester.TesterName)
+            @Html.DisplayFor(model => model.TesterID)
         </dd>
 
         <dt>

@@ -9,42 +9,47 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.developer.DeveloperName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.project.ProjectName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tester.TesterName)
+            @Html.DisplayNameFor(model => model.ModuleID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ModuleName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ProjectID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ModuleStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeveloperID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TesterID)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.developer.DeveloperName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.project.ProjectName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tester.TesterName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModuleName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModuleStatus)
-        </td>
-        
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModuleID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModuleName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProjectID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModuleStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DeveloperID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TesterID)
+    </td>
+</tr>
 }
 
 </table>

@@ -9,30 +9,43 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.module.ModuleName)
+            @Html.DisplayNameFor(model => model.BugID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tester.TesterName)
+            @Html.DisplayNameFor(model => model.BugDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TesterID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BugStatus)
         </th>
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.module.ModuleName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tester.TesterName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BugStatus)
-        </td>
-       
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.BugID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BugDescription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModuleID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TesterID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BugStatus)
+    </td>
+
+</tr>
 }
 
 </table>

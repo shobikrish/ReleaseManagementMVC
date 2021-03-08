@@ -137,6 +137,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103060518019_InitialCreate.cs" />
+    <Compile Include="Migrations\202103060518019_InitialCreate.Designer.cs">
+      <DependentUpon>202103060518019_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103080656432_AddBugDescription.cs" />
+    <Compile Include="Migrations\202103080656432_AddBugDescription.Designer.cs">
+      <DependentUpon>202103080656432_AddBugDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bug.cs" />
     <Compile Include="Models\Developer.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -212,6 +221,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103060518019_InitialCreate.resx">
+      <DependentUpon>202103060518019_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103080656432_AddBugDescription.resx">
+      <DependentUpon>202103080656432_AddBugDescription.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,7 +15,8 @@ namespace ReleaseManagementMVC.Controllers
         {
             try
             {
-                var moduleIdsFromDB = from x in testContext.Modules select x.ModuleID;
+               
+                var moduleIdsFromDB = from x in testContext.Modules where x.TesterID == id select x.ModuleID ;
                 ViewBag.moduleIds = new SelectList(moduleIdsFromDB.ToList(), "ModuleID");
                 if (moduleIdsFromDB == null)
                 {
